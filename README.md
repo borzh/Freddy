@@ -1,3 +1,7 @@
+## Note
+
+This fork allows leading 0's of numbers.
+
 ## Why Freddy?
 
 Parsing JSON elegantly and safely can be hard, but Freddy is here to help. Freddy is a reusable framework for parsing JSON in Swift. It has three principal benefits.

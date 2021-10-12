@@ -140,10 +140,11 @@ public struct JSONParser {
                 case Literal.MINUS:
                     return try decodeIntegralValue(NumberParser(loc: loc, input: input, state: .leadingMinus))
 
-                case Literal.zero:
-                    return try decodeIntegralValue(NumberParser(loc: loc, input: input, state: .leadingZero))
+                // Borzh: commented here, allow leading zero.
+                // case Literal.zero:
+                //     return try decodeIntegralValue(NumberParser(loc: loc, input: input, state: .leadingZero))
 
-                case Literal.one...Literal.nine:
+                case Literal.zero...Literal.nine:
                     return try decodeIntegralValue(NumberParser(loc: loc, input: input, state: .preDecimalDigits))
 
                 case Literal.SPACE, Literal.TAB, Literal.RETURN, Literal.NEWLINE:
